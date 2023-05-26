@@ -13,6 +13,7 @@ Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,csha
 *.user
 *.userosscache
 *.sln.docstates
+SentTexts.cs
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -413,3 +414,37 @@ FodyWeavers.xsd
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,csharp
+SendText.cs
+obj/cli-translator.csproj.nuget.dgspec.json
+obj/cli-translator.csproj.nuget.g.props
+obj/project.assets.json
+obj/project.nuget.cache
+obj/Debug/net7.0/cli-translator.assets.cache
+obj/Debug/net7.0/cli-translator.csproj.AssemblyReference.cache
+obj/Debug/net7.0/cli-translator.csproj.CoreCompileInputs.cache
+obj/Debug/net7.0/cli-translator.csproj.FileListAbsolute.txt
+obj/Debug/net7.0/cli-translator.dll
+obj/Debug/net7.0/cli-translator.GeneratedMSBuildEditorConfig.editorconfig
+obj/Debug/net7.0/cli-translator.genruntimeconfig.cache
+obj/Debug/net7.0/cli-translator.pdb
+obj/Debug/net7.0/ref/cli-translator.dll
+obj/Debug/net7.0/refint/cli-translator.dll
+obj/project.nuget.cache
+obj/cli-translator.csproj.nuget.dgspec.json
+obj/cli-translator.csproj.nuget.g.props
+obj/project.assets.json
+obj/project.nuget.cache
+obj/Debug/net7.0/cli-translator.assets.cache
+obj/Debug/net7.0/cli-translator.csproj.AssemblyReference.cache
+obj/Debug/net7.0/cli-translator.csproj.CoreCompileInputs.cache
+obj/Debug/net7.0/cli-translator.csproj.FileListAbsolute.txt
+obj/Debug/net7.0/cli-translator.dll
+obj/Debug/net7.0/cli-translator.GeneratedMSBuildEditorConfig.editorconfig
+obj/Debug/net7.0/cli-translator.genruntimeconfig.cache
+obj/Debug/net7.0/cli-translator.pdb
+obj/Debug/net7.0/ref/cli-translator.dll
+obj/Debug/net7.0/refint/cli-translator.dll
+obj/Debug/net7.0/ref/cli-translator.dll
+obj/Debug/net7.0/cli-translator.pdb
+obj/Debug/net7.0/cli-translator.genruntimeconfig.cache
+obj/Debug/net7.0/cli-translator.GeneratedMSBuildEditorConfig.editorconfig
