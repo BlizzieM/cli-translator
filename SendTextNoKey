@@ -11,10 +11,10 @@ using Newtonsoft.Json;
     // required if you're using a multi-service or regional (not global) resource. It can be found in the Azure portal on the Keys and Endpoint page.
     private static readonly string location = "swedencentral";
     
-    public async Task<string> Translate(string translateable, string inputLang)
+    public async Task<string> Translate(string translateable, string inputLang, string outputLang)
     {
         // Input and output languages are defined as parameters.
-        string route = String.Format("/translate?api-version=3.0&from={0}&to=es&", inputLang);
+        string route = String.Format("/translate?api-version=3.0&from={0}&to={1}&", inputLang, outputLang);
         string textToTranslate = translateable;
         object[] body = new object[] { new { Text = textToTranslate } };
         var requestBody = JsonConvert.SerializeObject(body);
