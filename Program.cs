@@ -13,20 +13,11 @@ class Program
 
         SendText translator = new SendText();
         
-        string result = await Scribe(translator,aLine);
+        await Task.Delay(2000);
+
+        string result = await translator.Translate(aLine);
 
         Console.WriteLine(result);
-    }
-
-    static async Task<string> Scribe(SendText txt, string tlate)
-    {
-        string lated = " ";
-
-        await Task.Delay(5000);
-
-        lated = await txt.Translate(tlate);
-
-        return lated;
     }
 
 }

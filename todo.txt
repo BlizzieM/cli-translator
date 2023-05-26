@@ -1,1 +1,2 @@
-1: Get parser to work and send the inserted text to be translated
+1: Get parser to work and send the inserted text to be translated: DONE 
+2: Implement way to edit input language
