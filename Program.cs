@@ -5,11 +5,15 @@ class Program
 {
     static async Task Main(string[] args)
     {
-        SendText translator = new SendText();
+        string? aLine = null;
 
-        string late = "Cat napped at the attick";
+        Console.WriteLine("Enter English Text to be translated into spanish:");
+        aLine = Console.ReadLine();
+        Console.WriteLine("Translating...");
+
+        SendText translator = new SendText();
         
-        string result = await Scribe(translator,late);
+        string result = await Scribe(translator,aLine);
 
         Console.WriteLine(result);
     }
