@@ -10,14 +10,11 @@ using Newtonsoft.Json;
     // location, also known as region.
     // required if you're using a multi-service or regional (not global) resource. It can be found in the Azure portal on the Keys and Endpoint page.
     private static readonly string location = "swedencentral";
-
-    private string lated
-    {get; set;}
     
-    public async Task<string> Translate(string translateable)
+    public async Task<string> Translate(string translateable, string inputLang)
     {
         // Input and output languages are defined as parameters.
-        string route = "/translate?api-version=3.0&from=en&to=es&";
+        string route = String.Format("/translate?api-version=3.0&from={0}&to=es&", inputLang);
         string textToTranslate = translateable;
         object[] body = new object[] { new { Text = textToTranslate } };
         var requestBody = JsonConvert.SerializeObject(body);
@@ -37,9 +34,9 @@ using Newtonsoft.Json;
             HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
             // Read response as a string.
             string result = await response.Content.ReadAsStringAsync();
-            lated = result;
+            return result;
         }
-        return lated;
+
     }
 
 }
