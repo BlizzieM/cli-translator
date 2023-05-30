@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 public record struct Transl
 {
-    public string? text { get; set; }
+       public string? text { get; set; }
 
     public string? to { get; set; }
 }
@@ -16,7 +16,7 @@ class Program
     {
         var result = new List<Transl>();
 
-        result = System.Text.Json.JsonSerializer.Deserialize<List<Transl>>(res);
+        result = System.Text.Json.JsonSerializer.Deserialize<List<Transl>>(String.Format(@"{0}", res));
 
         if (result != null && result.Count > 0)
         {
