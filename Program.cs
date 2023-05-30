@@ -1,8 +1,31 @@
 ﻿using System.Text;
+using System.Text.Json;
 using Newtonsoft.Json;
+
+public record struct Transl
+{
+    public string? text { get; set; }
+
+    public string? to { get; set; }
+}
 
 class Program
 {
+
+    static void parseJson(string res)
+    {
+        var result = new List<Transl>();
+
+        result = System.Text.Json.JsonSerializer.Deserialize<List<Transl>>(res);
+
+        if (result != null && result.Count > 0)
+        {
+            foreach (var Transl in result)
+            {
+                Console.WriteLine($"{Transl.text}");
+            }
+        }
+    }
 
     static async Task Main(string[] args)
     {
@@ -29,10 +52,10 @@ class Program
 
             string result = await translator.Translate(aLine, iLang, oLang);
 
-            Console.WriteLine(result);
+            parseJson(result);
 
             Console.WriteLine("Want to translate another line? (Y)es/(N)o:");
-            
+
             bool continueCheck = true;
 
             do
