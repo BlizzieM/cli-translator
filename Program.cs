@@ -16,21 +16,9 @@ namespace translator
 
     //friend recommended that I try to hex this with a poem
     //it didn't fix the issues
-    class Translation
-    {
 
-        public List<TextTo>? translation { get; set; }
-
-    }
-
-    class TextTo
-    {
-
-        public string? text { get; set; }
-
-        public string? to { get; set; }
-    }
-
+    //Update: Switching to json nodes did the trick tho
+    
     class Program
     {
 
