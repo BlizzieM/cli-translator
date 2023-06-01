@@ -71,40 +71,50 @@ namespace translator
                 Console.WriteLine("Enter 2 character language code for languate to translate to:");
                 oLang = Console.ReadLine();
 
-                Console.WriteLine("Enter Text to be translated:");
-                aLine = Console.ReadLine();
-                Console.WriteLine("Translating...");
-
-                SendText translator = new SendText();
-
-                string result = await translator.Translate(aLine, iLang, oLang);
-
-                parseJson(result);
-
-                Console.WriteLine("Want to translate another line? (Y)es/(N)o:");
-
-                bool continueCheck = true;
-
-                do
+                if (iLang.Length != 2 || oLang.Length != 2)
                 {
-                    string? keepTranslating = Console.ReadLine();
-                    if (keepTranslating == "Y" || keepTranslating == "y")
-                    {
-                        continueCheck = false;
-                    }
-
-                    else if (keepTranslating == "N" || keepTranslating == "n")
-                    {
-                        shouldRun = false;
-                        continueCheck = false;
-                    }
-
-                    else
-                    {
-                        Console.WriteLine("Please enter a valid character!");
-                    }
+                    Console.WriteLine("");
+                    Console.WriteLine("Please write valid code for input and/or output languages");
+                    Console.WriteLine("");
                 }
-                while (continueCheck == true);
+
+                else
+                {
+                    Console.WriteLine("Enter Text to be translated:");
+                    aLine = Console.ReadLine();
+                    Console.WriteLine("Translating...");
+
+                    SendText translator = new SendText();
+
+                    string result = await translator.Translate(aLine, iLang, oLang);
+
+                    parseJson(result);
+
+                    Console.WriteLine("Want to translate another line? (Y)es/(N)o:");
+
+                    bool continueCheck = true;
+
+                    do
+                    {
+                        string? keepTranslating = Console.ReadLine();
+                        if (keepTranslating == "Y" || keepTranslating == "y")
+                        {
+                            continueCheck = false;
+                        }
+
+                        else if (keepTranslating == "N" || keepTranslating == "n")
+                        {
+                            shouldRun = false;
+                            continueCheck = false;
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("Please enter a valid character!");
+                        }
+                    }
+                    while (continueCheck == true);
+                }
             }
             while (shouldRun == true);
         }
