@@ -18,7 +18,7 @@ namespace translator
     //it didn't fix the issues
 
     //Update: Switching to json nodes did the trick tho
-    
+
     class Program
     {
 
@@ -26,13 +26,31 @@ namespace translator
         {
             string json = res;
 
-            JsonNode rootNode = JsonNode.Parse(json)!;
-            JsonArray translations = rootNode[0]["translations"].AsArray();
+            JsonArray? translations = null;
 
-            foreach (var translation in translations)
+            JsonNode rootNode = JsonNode.Parse(json)!;
+            try
             {
-                Console.WriteLine(translation["text"].AsValue());
+                translations = rootNode[0]["translations"].AsArray();
             }
+            catch (System.InvalidOperationException e)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("Error has occured. Did you supply valid language codes?");
+                Console.WriteLine("");
+            }
+
+            if (translations != null && 0 < translations.Count)
+            {
+                foreach (var translation in translations)
+                {
+
+                    Console.WriteLine("");
+                    Console.WriteLine(translation["text"].AsValue());
+                    Console.WriteLine("");
+                }
+            }
+
         }
 
 
